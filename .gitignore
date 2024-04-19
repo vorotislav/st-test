@@ -19,3 +19,16 @@
 
 # Go workspace file
 go.work
+
+# IDE files and directories
+.idea/
+
+# Build directory
+bin/
+
+# Temp files and directories
+tmp/
+temp/
+
+# Code coverage files
+.coverage.*
