@@ -95,7 +95,7 @@ func TestRepo_Delete(t *testing.T) {
 	err = repo.Delete(1)
 	require.NoError(t, err)
 
-	_, err = repo.ReadAll()
+	_, err = repo.Read(1)
 	require.Error(t, err)
 	require.ErrorIs(t, err, models.ErrNotFound)
 
@@ -115,7 +115,7 @@ func TestRepo_DeleteAll(t *testing.T) {
 	err = repo.DeleteAll()
 	require.NoError(t, err)
 
-	_, err = repo.ReadAll()
+	_, err = repo.Read(1)
 	require.Error(t, err)
 	require.ErrorIs(t, err, models.ErrNotFound)
 
