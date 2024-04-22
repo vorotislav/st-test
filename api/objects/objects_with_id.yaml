@@ -1,0 +1,57 @@
+get:
+  operationId: getObjectByID
+  tags:
+    - objects
+  summary: Find single object in the store using its ID
+  parameters:
+    - name: objectID
+      required: true
+      in: path
+      description: ID of object to return
+      schema:
+        type: integer
+        minimum: 1
+      example: 1
+  responses:
+    '200':
+      description: operation successful
+      content:
+        application/json:
+          schema:
+            type: object
+    '404':
+      description: Object not found
+    '500':
+      description: Internal server error
+
+put:
+  tags:
+    - objects
+  operationId: putObject
+  summary: Put new objects to the store
+  parameters:
+    - name: objectID
+      required: true
+      in: path
+      description: ID of object to return
+      schema:
+        type: integer
+        minimum: 1
+      example: 1
+    - in: header
+      name: X-expires
+      description: the lifetime of the object in the duration format
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '201':
+      description: The object was saved successfully
+    '204':
+      description: The object was updated successfully
+    '500':
+      description: Internal server error

@@ -1,0 +1,10 @@
+openapi: 3.0.3
+
+info:
+  title: test
+  description: Тестовое задание
+  version: 1.0.0
+
+paths:
+  /object/{objectID}:
+    $ref: './objects/objects_with_id.yaml'

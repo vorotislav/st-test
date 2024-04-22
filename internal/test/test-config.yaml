@@ -1,0 +1,11 @@
+api:
+  address: "127.0.0.1"
+  port: 8080
+
+log:
+  level: "debug"
+  verbose: true
+  format: "text"
+
+localstorage:
+  path: "st-test.db"
