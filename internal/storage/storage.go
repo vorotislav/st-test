@@ -60,7 +60,7 @@ func (s *Store) SaveObject(_ context.Context, item models.Item) (int, error) {
 	if ok {
 		s.log.Info("the item has already been saved")
 
-		return 0, nil //nolint:nlreturn
+		return 0, nil
 	}
 
 	s.s[item.ID] = item
